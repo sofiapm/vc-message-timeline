@@ -12,22 +12,22 @@
 const path = require('path')
 const dummyUsers = require(path.resolve('seeds/users.json'))
 
-module.exports.bootstrap = function(cb) {
-
+module.exports.bootstrap = (cb) => {
   User.count().exec((err, count) => {
-    if(err){
-      sails.log.error(err);
-      return cb(err);
+    if (err) {
+      sails.log.error(err)
+      return cb(err)
     }
 
     // Already has data
-    if(count > 0) {
-      return cb();
+    if (count > 0) {
+      return cb()
     }
 
-    User.create(dummyUsers).exec(cb);
+    // Create dummy users
+    User.create(dummyUsers).exec(cb)
   })
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
-  //cb();
-};
+  // cb();
+}
