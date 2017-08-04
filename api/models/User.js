@@ -35,9 +35,13 @@ module.exports = {
      * Attribute methods
      */
 
-    getFullName: function (){
-      return this.firstName + ' ' + this.lastName;
+    getFullName: function () {
+      return this.firstName + ' ' + this.lastName
     }
-  }
-};
+  },
 
+  beforeCreate: function (values, cb) {
+    values.email = values.email.toLowerCase()
+    return cb()
+  }
+}
