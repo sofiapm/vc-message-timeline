@@ -10,6 +10,7 @@ module.exports = {
   attributes: {
 
     // e.g. John
+
     firstName: {
       type: 'string',
       required: true
@@ -39,6 +40,8 @@ module.exports = {
       return this.firstName + ' ' + this.lastName
     }
   },
+
+  // Transform email to lowercase before save user
 
   beforeCreate: function (values, cb) {
     values.email = values.email.toLowerCase()
