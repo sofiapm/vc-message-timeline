@@ -25,8 +25,9 @@
     "sails-mongo": "^0.12.2"
   },
   "scripts": {
-    "debug": "node debug app.js",
-    "start": "node app.js"
+    "debug": "NODE_ENV=development node debug app.js",
+    "start": "NODE_ENV=development node app.js",
+    "test": "NODE_ENV=test node ./node_modules/mocha/bin/mocha test/bootstrap.test.js test/integration/**/*.test.js"
   },
   "main": "app.js",
   "repository": {
@@ -34,5 +35,15 @@
     "url": "git://github.com/sofiamartins/vc-message-timeline.git"
   },
   "author": "sofiamartins",
-  "license": ""
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.1",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^3.5.0",
+    "supertest": "^3.0.0"
+  }
 }

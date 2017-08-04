@@ -11,15 +11,13 @@
  *   https://github.com/balderdashy/sails-docs/blob/master/anatomy/myApp/tasks/pipeline.js.md
  */
 
-
 // CSS files to inject in order
 //
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
   'styles/**/*.css'
-];
-
+]
 
 // Client-side javascript files to inject in order
 // (uses Grunt-style wildcard/glob/splat expressions)
@@ -27,23 +25,14 @@ var jsFilesToInject = [
 
   // Load sails.io before everything else
   'js/dependencies/sails.io.js',
-  'js/dependencies/jquery-3.2.1.min.js',
-  'js/dependencies/bootstrap.3.3.7.js',
 
   // Dependencies like jQuery, or Angular are brought in here
   'js/dependencies/**/*.js',
 
-  // Inject Angular Modules
-  'js/dependencies/public/controllers/*.js',
-
-  // Inject Angular Controllers
-  'js/dependencies/public/modules/*.js',
-
   // All of the rest of your client-side js files
   // will be injected here in no particular order.
   'js/**/*.js'
-];
-
+]
 
 // Client-side HTML templates are injected using the sources below
 // The ordering of these templates shouldn't matter.
@@ -56,40 +45,32 @@ var jsFilesToInject = [
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
   'templates/**/*.html'
-];
-
-
-
-
-
-
+]
 
 // Default path for public folder (see documentation for more information)
-var tmpPath = '.tmp/public/';
+var tmpPath = '.tmp/public/'
 
 // Prefix relative paths to source files so they point to the proper locations
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
-module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
+module.exports.cssFilesToInject = cssFilesToInject.map(function (cssPath) {
   // If we're ignoring the file, make sure the ! is at the beginning of the path
   if (cssPath[0] === '!') {
-    return require('path').join('!.tmp/public/', cssPath.substr(1));
+    return require('path').join('!.tmp/public/', cssPath.substr(1))
   }
-  return require('path').join('.tmp/public/', cssPath);
-});
-module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
+  return require('path').join('.tmp/public/', cssPath)
+})
+module.exports.jsFilesToInject = jsFilesToInject.map(function (jsPath) {
   // If we're ignoring the file, make sure the ! is at the beginning of the path
   if (jsPath[0] === '!') {
-    return require('path').join('!.tmp/public/', jsPath.substr(1));
+    return require('path').join('!.tmp/public/', jsPath.substr(1))
   }
-  return require('path').join('.tmp/public/', jsPath);
-});
-module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
+  return require('path').join('.tmp/public/', jsPath)
+})
+module.exports.templateFilesToInject = templateFilesToInject.map(function (tplPath) {
   // If we're ignoring the file, make sure the ! is at the beginning of the path
   if (tplPath[0] === '!') {
-    return require('path').join('!assets/', tplPath.substr(1));
+    return require('path').join('!assets/', tplPath.substr(1))
   }
-  return require('path').join('assets/',tplPath);
-});
-
-
+  return require('path').join('assets/', tplPath)
+})

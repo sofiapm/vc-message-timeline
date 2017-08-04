@@ -1,0 +1,12 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "standard",
+        "promise"
+    ],
+    "globals": {
+        "sails": true,
+        "UserController": true,
+        "User": true
+    }
+}
