@@ -9,6 +9,8 @@
         "UserController": true,
         "User": true,
         "MessageController": true,
-        "Message": true
+        "Message": true,
+        "CommentController": true,
+        "Comment": true
     }
 }
