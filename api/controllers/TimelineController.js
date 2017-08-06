@@ -27,12 +27,12 @@ module.exports = {
       })
   },
 
-  comments: function (req, res) {
+  comments: function (req, res)  {
     Comment.find({
       where: { message: req.query.message },
       skip: req.query.skip || 0,
       limit: req.query.limit || 10,
-      sort: 'createdAt DESC'
+      sort: 'createdAt ASC'
     })
       .populate('author')
       .exec((err, comments) => {

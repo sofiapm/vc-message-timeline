@@ -13,10 +13,12 @@ module.exports = {
       required: true
     },
     author: {
-      model: 'User'
+      model: 'User',
+      required: true
     },
     message: {
-      model: 'Message'
+      model: 'Message',
+      required: true
     }
   }
 }
