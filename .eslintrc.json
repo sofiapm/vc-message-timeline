@@ -7,6 +7,10 @@
     "globals": {
         "sails": true,
         "UserController": true,
-        "User": true
+        "User": true,
+        "MessageController": true,
+        "Message": true,
+        "CommentController": true,
+        "Comment": true
     }
 }
